@@ -51,15 +51,24 @@ const http= require('http');
 const { runInNewContext } = require('vm');
 
 const server = http.createServer((req,res)=>{
+    const users=[
+        {name:"name1",age:"age1"},
+        {name:"name2",age:"age2"}
+    ]
     console.log(req.url);
-    console.log(response.getHeaders());
+    console.log(res.getHeaders());
     if(req.url=="/"){
-        
-        res.write("<h1>Server</h1>"+server.listening);
+        res.end("<h1>Server</h1>")
     }
-    else{res.write("Server")};
-    server.setTimeout([20000][res.write(" Time out")])
-    res.end();
+    if(req.url=="/users"){
+        res.writeHead(200, {
+            'Content-type':'text/json'
+        })
+        res.write("<h1>Server</h1>"+server.listening);
+        server.setTimeout([20000][res.write(" Time out")])
+    res.end(JSON.stringify(users));
+    
+    }
     
 })
 
