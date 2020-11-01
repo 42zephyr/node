@@ -6,10 +6,10 @@ var mongoose = require('mongoose');
 // });
 
 let schemaus=mongoose.Schema({
-    name:String,
-    age:Number
+    name:'String',
+    age:'Number'
 });
-module.exports=mongoose.model('Users',schemaus)
+module.exports=mongoose.model('users',schemaus)
 
 // let user=mongoose.model('User',schemaus)
 //         user.find(function(err,users){
