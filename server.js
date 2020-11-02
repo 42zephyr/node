@@ -1,12 +1,26 @@
 const express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
-    Task=require('./api/models/todolistmod.js'),
+    Good=require('./api/models/todolistmod.js'),
     mongoose=require('mongoose'),
     bodyParser = require('body-parser');
 
+    // app.use(function(req, res, next) {
+    //     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+    //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    //     next();
+    //   });
+      
+    //   app.get('/', function(req, res, next) {
+    //     // Handle the get for this route
+    //   });
+      
+    //   app.post('/', function(req, res, next) {
+    //    // Handle the post for this route
+    //   });
+
 mongoose.Promise=global.Promise;
-mongoose.connect('mongodb://localhost/mongoose_basics');
+mongoose.connect('mongodb://localhost/goods_db');
 // app.get("/",(req,res) => {
 //     res.json(users);
 // })

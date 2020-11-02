@@ -1,20 +1,13 @@
 var mongoose = require('mongoose');
-let Schema= mongoose.Schema;
-let tschemaus=mongoose.Schema({
+let goods=mongoose.Schema({
         name:{
             type:String,
-            required:'Number'
         },
-        creatDate:{
-            type:Date,
-            default:Date.now
+        id:{
+            type:Number,
         },
-        status:{
-            type:[{ 
-                type:String,
-                enum:['pending','ongoing','completed']
-            }],
-        default:['pending']
+        price:{
+            type:Number,
         }
 });
-module.exports=mongoose.model('Tasks',tschemaus)
+module.exports=mongoose.model('Goods',goods)
